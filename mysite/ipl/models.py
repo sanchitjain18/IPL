@@ -17,18 +17,3 @@ def bar(request):
         #  res.append([i,j])
         dataJSON = dumps(mpy.values())
         return render(request, '', {'data': dataJSON})
-
-def send_dictionary(request):
-    # create data dictionary
-    dataDictionary = {
-        'hello': 'World',
-        'geeks': 'forgeeks',
-        'ABC': 123,
-        456: 'abc',
-        14000605: 1,
-        'list': ['geeks', 4, 'geeks'],
-        'dictionary': {'you': 'can', 'send': 'anything', 3: 1}
-    }
-    # dump data
-    dataJSON = dumps(dataDictionary)
-    return render(request, 'ipl/js.html', {'data': dataJSON})
