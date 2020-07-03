@@ -3,3 +3,6 @@ from django.http import HttpResponse
 # Create your views here.
 def index(request):
     return render(request, "ipl/index.html", {})
+
+def js(request):
+    return render(request, "ipl/js.html", {})
