@@ -16,4 +16,15 @@ def bar(request):
         #for i in mpy.keys() and j in mpy.values():
         #  res.append([i,j])
         dataJSON = dumps(mpy.values())
-        return render(request, '', {'data': dataJSON})
+        return render(request, 'js.html', {'data': dataJSON})
+
+class match(models.Model):
+    season = models.IntegerField(null=False)
+    city = models.CharField(max_length=50)
+    winner = models.CharField(max_length=100)
+    venue = models.CharField(max_length=250)
+
+    def __unicode__(self):
+        return u'%s %s' % (self.season, self.city)
+    #def __str__(self):
+        #return self.city
